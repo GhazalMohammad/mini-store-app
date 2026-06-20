@@ -1,0 +1,92 @@
+<!-- HERO -->
+
+<section class="bg-black text-white py-20 px-6">
+
+  <div class="max-w-7xl mx-auto text-center">
+
+    <p class="uppercase tracking-[6px] text-gray-400 mb-4">
+      Ghazal Collection
+    </p>
+
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      Premium Shoes
+    </h1>
+
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-8">
+      Discover modern sneakers and premium footwear
+      designed for everyday style.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="bg-gray-100 py-16 px-4">
+
+  <div class="max-w-7xl mx-auto">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- CARD -->
+
+      <div
+        *ngFor="let product of products" (click)="goToProduct(product.id)"
+        class="group bg-white rounded-3xl overflow-hidden cursor-pointer
+               shadow-md hover:shadow-2xl
+               hover:-translate-y-2
+               transition duration-500"
+      >
+
+        <!-- IMAGE -->
+
+        <div class="overflow-hidden">
+
+          <img
+            [src]="product.image"
+            class="w-full h-80 object-cover
+                   group-hover:scale-105
+                   transition duration-700"
+          />
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="p-5">
+
+          <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">
+            Shoes
+          </p>
+
+          <h2 class="text-lg font-semibold mb-3 line-clamp-1">
+            {{ product.name }}
+          </h2>
+
+          <div class="flex items-center justify-between">
+
+            <p class="text-xl font-bold">
+              ${{ product.price }}
+            </p>
+
+            <button
+              class="bg-black text-white
+                     px-5 py-2 rounded-xl
+                     hover:bg-gray-800
+                     transition duration-300"
+            >
+              Shop
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

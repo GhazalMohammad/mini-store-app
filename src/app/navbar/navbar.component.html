@@ -1,0 +1,77 @@
+<nav class="bg-white border-b px-8 py-4 flex items-center justify-between sticky top-0 z-50">
+
+  <!-- Logo -->
+  <a routerLink="/home">
+    <img src="assets/Ghazalll.png"
+         class="h-16 w-auto object-contain cursor-pointer hover:scale-105 transition" />
+  </a>
+
+  <!-- ================= USER LOGGED IN ================= -->
+  <div *ngIf="user">
+
+  <!-- User -->
+  <div *ngIf="user.role === 'user'"
+       class="hidden md:flex items-center gap-8 font-medium">
+
+    <a routerLink="/shoes">Shoes</a>
+    <a routerLink="/clothes">Clothes</a>
+    <a routerLink="/orders">My Orders</a>
+
+  </div>
+
+  <!-- Admin -->
+  <div *ngIf="user.role === 'admin'"
+       class="hidden md:flex items-center gap-8 font-medium">
+
+    <a routerLink="/admin">Dashboard</a>
+
+    <a routerLink="/AdminOrders">
+      Orders
+    </a>
+
+  </div>
+
+</div>
+
+  <!-- ================= ICONS ================= -->
+  <div *ngIf="user" class="flex items-center gap-5">
+
+    <lucide-icon
+      [img]="icons.Menu"
+      class="md:hidden cursor-pointer"
+      (click)="isMenuOpen = !isMenuOpen">
+    </lucide-icon>
+
+    <lucide-icon
+      [img]="icons.Search"
+      (click)="toggleSearch()">
+    </lucide-icon>
+
+    <input
+      (input)="onSearch($event)"
+      type="text"
+      placeholder="Search products..."
+      [class.w-0]="!showSearch"
+      [class.w-48]="showSearch"
+      [class.opacity-0]="!showSearch"
+      [class.opacity-100]="showSearch"
+      class="border rounded px-3 py-2 transition-all" />
+
+    <lucide-icon
+      [img]="icons.ShoppingCart"
+      routerLink="/cart">
+    </lucide-icon>
+
+        <button
+  (click)="logOut()"class="text-red-500 hover:text-red-700 font-medium ">Logout</button>
+
+  </div>
+
+  <!-- ================= NOT LOGGED IN ================= -->
+  <div *ngIf="!user" class="flex items-center gap-4">
+    <a routerLink="/login" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-black transition">Login</a>
+    <a routerLink="/register" class="px-4 py-2 text-sm font-medium bg-black text-white rounded-lg hover:bg-gray-800 transition">Register</a>
+
+  </div>
+
+</nav>

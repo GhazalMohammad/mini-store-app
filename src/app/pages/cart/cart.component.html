@@ -1,0 +1,74 @@
+<section class="max-w-4xl mx-auto py-20 px-4">
+
+  <h1 class="text-3xl font-bold mb-8">
+    Your Cart
+  </h1>
+
+  <div *ngFor = "let item of cart; let i = index"
+       class="flex items-center justify-between
+              bg-white rounded-2xl shadow-2xl
+              p-4 mb-4">
+
+    <!-- LEFT -->
+    <div class="flex items-center gap-4">
+
+        
+      <!-- IMAGE -->
+      <img [src]="item.image"
+           class="w-20 h-20 object-cover rounded-xl">
+      <!-- INFO -->
+      <div>
+
+        <h2 class="font-semibold text-lg">
+          {{ item.name }}
+        </h2>
+
+        <p class="text-gray-500">
+          ${{ item.price }}
+        </p>
+        <p class="text-gray-500">
+           Quantity: {{ item.quantity }}
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class=" flex items-center gap-2">
+      <button (click) = "remove(i)"
+      class="bg-red-500 text-white px-4 py-2 rounded-xl hover:bg-red-800 transition">
+      Remove
+    </button>
+    <button (click)="increasQuantity(item.id)" class="bg-green-500 text-white px-3 py-1 rounded-lg" >+</button>
+     <span>{{ item.quantity }}</span>
+    <button (click)="decreaseQuantity(item.id)" class="bg-yellow-500 text-white px-3 py-1 rounded-lg">-</button>
+    </div>
+    
+  </div>
+    <div class="mt-10 text-right">
+      <h2 class="text-3xl font-bold text-green-400">Total: ${{totalPrice}}</h2>
+    </div>
+
+</section>
+<!-- --------------------------------- -->
+<section class="bg-white mt-16  p-8 rounded-3xl shadow-lg ">
+  <h2 class="text-2xl font-bold mb-8">Checkout</h2>
+  <!-- Name -->
+  <input type="text"[(ngModel)]="name" placeholder="Your Name" class="w-full border rounded-xl p-4 mb-4 outline-none focus:border-black ">
+    <!-- Address -->
+  <input type="text"[(ngModel)]="address" placeholder="Your Adrees" class="w-full border rounded-xl p-4 mb-4 outline-none focus:border-black">
+    <!-- Phone -->
+  <input type="text"[(ngModel)]="phone" placeholder="Phone" class="w-full border rounded-xl p-4 mb-4 outline-none focus:border-black">
+  <!-- Payment -->
+   <select name="" id=""[(ngModel)]="paymentMethod" class="w-full border rounded-xl p-4 mb-8">
+    <option value="Cash">
+      Cash On Delivery
+    </option>
+    <option value="Card">
+      Credit Card
+    </option>
+   </select>
+   <button (click)="placeOrder()" class="w-full bg-black text-white py-4 rounded-2xl hover:bg-gray-800 transition duration-500">
+    Place Order</button>
+</section>
