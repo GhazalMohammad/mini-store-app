@@ -1,3 +1,4 @@
+mini-stor-ghazal.netlify.app
 # Mini Store App 🛒
 
 A full-featured e-commerce web application built with Angular.
