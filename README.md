@@ -1,27 +1,46 @@
-# MiniStoreApp
+# Mini Store App 🛒
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+A full-featured e-commerce web application built with Angular.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🛍 Product listing (Shoes, Clothes, etc.)
+- 🔍 Product details page
+- 🛒 Shopping cart system
+- 📦 Order management system
+- 🔐 Authentication (Login/Register)
+- 👨‍💼 Admin dashboard
+- 📊 Admin statistics (Products, Orders, Sales)
+- 🖼 Image upload for products
+- ⭐ Featured products slider
+- 💾 Data stored using LocalStorage
 
-## Code scaffolding
+## 🛠 Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17
+- TypeScript
+- Tailwind CSS
+- RxJS
+- LocalStorage (No backend)
 
-## Build
+## 👤 Roles
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### User
+- Browse products
+- Add to cart
+- Place orders
+- View order history
 
-## Running unit tests
+### Admin
+- Add / Edit / Delete products
+- View all orders
+- Manage order status
+- View dashboard statistics
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📸 Project Type
 
-## Running end-to-end tests
+Frontend-only e-commerce project (No backend)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ✨ Author
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Ghazal Mohammad
